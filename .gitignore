@@ -1,0 +1,8 @@
+# 项目排除路径
+/ajax/target/
+/spring-boot1/target/
+/spring_1/target/
+/spring_2/target/
+/spring_3/target/
+/springboot-2/target/
+/springboot-mybatis/target/

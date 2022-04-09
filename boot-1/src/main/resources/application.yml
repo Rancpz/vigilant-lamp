@@ -1,0 +1,22 @@
+server:
+  port: 8087
+  servlet:
+    context-path: /boot-1
+    jsp:
+      init-parameters:
+        development: true
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp #修改视图解析器的相关配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  # 指定连接池类型
+    driver-class-name: com.mysql.cj.jdbc.Driver      # 指定驱动 8.0数据库中间得加“cj”
+    url: jdbc:mysql://localhost:3306/spring?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC        # 指定连接的url
+    username: root                                # 指定数据库用户名
+    password: 123456                          # 指定数据库密码
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml   # 指定mapper文件所在的位置
+  type-aliases-package: compzx.util.Book   # 指定为哪个包起别名

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="compzx"/>
+
+    <mvc:annotation-driven/>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <mvc:default-servlet-handler/>
+
+    <!--配置文件上传解析器 id固定写死为：multipartResolver-->
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+        <!--注入文件上传大小的限制 单位字节 20971520=20M 默认没有限制-->
+        <property name="maxUploadSize" value="20971520"/>
+    </bean>
+
+    <!--注册自定义拦截器-->
+    <bean class="compzx.MyInterceptor" id="myInterceptor"/>
+    <!--配置拦截哪些请求-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--mvc:mapping  代表要拦截的请求路径-->
+            <mvc:mapping path="/json/test3"/>
+            <!--mvc:exclude-mapping 代表哪些方法不被拦截-->
+            <!--            <mvc:exclude-mapping path="/json/test3"/>-->
+            <ref bean="myInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <!--配置全局异常处理-->
+    <bean class="compzx.CustomerException"/>
+</beans>

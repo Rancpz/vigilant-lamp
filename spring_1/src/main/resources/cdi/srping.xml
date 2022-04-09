@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    1 之前使用set注入，使用property标签-->
+    <!--    2现在使用构造注入，使用constructor-arg标签-->
+    <bean class="cdi.AdminDaoImpl" id="adminDao">
+        <!--        使用构造函数注入-->
+        <constructor-arg index="0" name="name" value="小白"/>
+        <constructor-arg index="1" name="age" value="2"/>
+        <!--        index:列表下标 name：对应属性名 value：要注入的值-->
+    </bean>
+</beans>

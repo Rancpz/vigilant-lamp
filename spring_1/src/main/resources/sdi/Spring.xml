@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="sdi.DeptDaoImpl" id="deptDao"/>
+
+    <!--    八大属性用value 注入对象用ref-->
+    <bean class="sdi.DeptServiceImpl" id="deptService">
+        <property name="deptDao" ref="deptDao"/>
+
+        <property name="qqs">
+            <array>
+                <value>小a</value>
+                <value>小b</value>
+                <value>小c</value>
+            </array>
+        </property>
+        <!--        <property name="qqe">-->
+        <!--            <array>-->
+        <!--                <ref bean="deptDao"/>-->
+        <!--                <ref bean="deptDao"/>-->
+        <!--                <ref bean="deptDao"/>-->
+        <!--            </array>-->
+        <!--        </property>-->
+        <property name="list">
+            <list>
+                <value>11</value>
+                <value>12</value>
+                <value>13</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="qq" value="111"/>
+                <entry key="ww" value="112"/>
+                <entry key="ee" value="113"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

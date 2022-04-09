@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="compzx.Dao.UserDao">
+
+    <select id="findAllUser" resultType="compzx.entity.User">
+        select * from user
+    </select>
+
+    <insert id="saveUser" parameterType="compzx.entity.User">
+        INSERT INTO user value(#{id}, #{name}, #{age}, #{bir} )
+    </insert>
+
+    <select id="findOneUser" resultType="compzx.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+    <delete id="deleteUser" parameterType="compzx.entity.User">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="compzx.entity.User">
+        update user set name = #{name}, age = #{age}, bir = #{bir} where id = #{id}
+    </update>
+</mapper>

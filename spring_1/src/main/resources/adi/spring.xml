@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adi.TagDaoImpl" id="tagDao"/>
+    <bean class="adi.TagNewDaoImpl" id="tagNewDao"/>
+    <!--        自动注入-->
+    <!--        autowire： 用来给组件中的成员变量自动赋值-->
+    <!--        byName： 根据名称完成自动注入，根据成员变量的名字去工厂中找，找到后赋值-->
+    <!--        byType： 根据名称完成自动注入 根据成员类型去工厂里找，找到对应类型赋值，找不到不赋值-->
+    <!--        问题，当多个实现类实现同一个接口时，工厂出现一致组件时，工厂会报错-->
+    <!--    <bean class="adi.TagServiceImpl" id="tagService" autowire="byType"/>-->
+</beans>

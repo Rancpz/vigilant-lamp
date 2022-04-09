@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_2" />
+        <module name="spring_3" />
+        <module name="spring-boot1" />
+        <module name="final" />
+        <module name="springboot-mybatis" />
+        <module name="springmvc-day2" />
+        <module name="springboot-2" />
+        <module name="ajax" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ajax" target="8" />
+      <module name="fast" target="1.8" />
+      <module name="final" target="1.8" />
+      <module name="spring-boot1" target="1.7" />
+      <module name="spring_1" target="1.7" />
+      <module name="spring_2" target="6" />
+      <module name="spring_3" target="8" />
+      <module name="springboot-2" target="1.7" />
+      <module name="springboot-mybatis" target="8" />
+      <module name="springmvc-day1" target="1.7" />
+      <module name="springmvc-day2" target="1.7" />
+      <module name="ssm-final" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="fast" options="-parameters" />
+      <module name="final" options="-parameters" />
+      <module name="spring-boot1" options="-parameters" />
+      <module name="springboot-2" options="-parameters" />
+      <module name="springboot-mybatis" options="-parameters" />
+    </option>
+  </component>
+</project>

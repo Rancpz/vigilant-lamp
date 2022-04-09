@@ -1,0 +1,18 @@
+server:
+  port: 8989  # 指定项目启动的端口号
+  servlet:
+    context-path: /springboot-2    # 指定当前项目访问路径的项目名
+    jsp:
+      init-parameters:
+        development: true #开启jsp自动更新
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp #修改视图解析器的相关配置
+
+logging:
+  level:
+    root: info
+    #compzx.controller: debug

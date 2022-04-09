@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:component-scan base-package="compzx"/>
+    <!--    注解式开发-->
+
+    <!--    创建数据源-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/tianjin?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!--    创建工厂-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <!--        注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--        注入mapper文件-->
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+        <!--        注入实体类（未）-->
+        <property name="typeAliasesPackage" value="compzx.entity"/>
+    </bean>
+
+    <!--    创建Dao组件-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--        注入sqlSessionfactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--        扫描dao接口-->
+        <property name="basePackage" value="compzx.dao"/>
+    </bean>
+
+    <!--    控制事务管理器-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <!--        注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

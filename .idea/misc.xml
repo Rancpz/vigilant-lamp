@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ajax" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-boot1" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_1" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_2" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_3" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-1" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-2" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-mybatis" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-day1" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-day3" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm-final" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/test" />
+    <type id="Spring" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring_1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_4/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_3/pom.xml" />
+        <option value="$PROJECT_DIR$/Test/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mvc-day3/pom.xml" />
+        <option value="$PROJECT_DIR$/ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot1/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-2/pom.xml" />
+        <option value="$PROJECT_DIR$/final/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/spring_1/spring2/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-day1/Test/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/spring-boot1/src/main/resources/application-dev.yml" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
